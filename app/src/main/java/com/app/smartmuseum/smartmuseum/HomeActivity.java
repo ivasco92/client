@@ -48,6 +48,10 @@ public class HomeActivity extends AppCompatActivity implements ZXingScannerView.
 
         CollapsingToolbarLayout tl= (CollapsingToolbarLayout)findViewById(R.id.toolbar_layout);
         tl.setExpandedTitleMarginBottom(40);
+       // toolbar.setLogo(R.drawable.ic_launcher);
+
+
+
 
         mScannerView = new ZXingScannerView(this);
         flag=1;
