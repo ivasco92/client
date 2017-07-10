@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SmartMuseum</string>
+    <string name="large_text">
+
+        "Smart Museum.\n\n"
+
+        "Smart Museum è l'app che permette di trasformare una semplice visita ad un museo in un'esperienza nuova e più coinvolgente.\n\n"
+        "Grazie al QR-Code presente vicino all'opera che ti interessa, potrai leggere o ascoltare le informazioni su di essa"
+        "direttamente sul tuo smartphone.\n"
+        "Basta premere il bottone per la scansione, rivolgere la fotocamera verso il QR-Code e il gioco è fatto.\n\n"
+        "Una volta apparse le informazioni sull'opera, potrai:\n\n"
+        "- ascoltare la descrizione premendo il bottone col simbolo dell'altoparlante,\n\n"
+        "- scorrere la galleria con le foto dell'opera,\n\n"
+        "- guardare gli eventuali video che la riguardano premendo il bottone col simbolo della telecamera.\n\n\n"
+        "Buon divertimento!\n\n\n"
+
+        "Per maggiori informazioni, visita il sito:"
+        <a href="http://smartmuseum.000webhostapp.com/">smartmuseum.000webhostapp.com</a>
+        "\n\n\n\n"
+
+    </string>
+
+
+    <string name="action_settings">Impostazioni</string>
+
+    <string name="next">Successivo</string>
+    <string name="skip">Salta</string>
+    <string name="start">Inizio</string>
+    <string name="title_slide1">Benvenuto in Smart Museum</string>
+    <string name="desc_slide1"> </string>
+    <string name="title_slide2">Qr Code</string>
+    <string name="desc_slide2">Questa app permette di visitare un museo in modo interattivo</string>
+    <string name="title_slide3">Audio e Video</string>
+    <string name="desc_slide3">Hai la possobilità di decidere se leggere o ascoltare le informazioni sulle opere</string>
+
+</resources>
