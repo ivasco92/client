@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher.png",
+        "source": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Paolo Pepe\\Desktop\\release\\SmartMuseum\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher.png",
+        "source": "C:\\Users\\Paolo Pepe\\Desktop\\release\\SmartMuseum\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    }
+]

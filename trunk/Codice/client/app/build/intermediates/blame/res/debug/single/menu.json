@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_home.xml",
+        "source": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum\\app\\src\\main\\res\\menu\\menu_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\Paolo Pepe\\Desktop\\release\\SmartMuseum\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_home.xml",
+        "source": "C:\\Users\\Paolo Pepe\\Desktop\\release\\SmartMuseum\\app\\src\\main\\res\\menu\\menu_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum\\app\\build\\intermediates\\res\\merged\\debug\\menu\\zxing_capture.xml",
+        "source": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum\\app\\build\\intermediates\\exploded-aar\\com.embarkmobile\\zxing-android-minimal\\2.0.0\\res\\menu\\zxing_capture.xml"
+    },
+    {
+        "merged": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum\\app\\build\\intermediates\\res\\merged\\debug\\menu\\zxing_encode.xml",
+        "source": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum\\app\\build\\intermediates\\exploded-aar\\com.embarkmobile\\zxing-android-minimal\\2.0.0\\res\\menu\\zxing_encode.xml"
+    }
+]
