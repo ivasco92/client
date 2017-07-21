@@ -28,4 +28,12 @@ public class Multimedia {
     public void setUrl(String url) {
         this.url = url;
     }
+
+    @Override
+    public String toString() {
+        return "Multimedia{" +
+                "id=" + id +
+                ", url='" + url + '\'' +
+                '}';
+    }
 }

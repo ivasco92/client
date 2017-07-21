@@ -148,4 +148,24 @@ public class Reperto {
     public void setPubblicato(String pubblicato) {
         this.pubblicato = pubblicato;
     }
+
+    @Override
+    public String toString() {
+        return "Reperto{" +
+                "id=" + id +
+                ", data_acquisizione='" + data_acquisizione + '\'' +
+                ", dimensioni='" + dimensioni + '\'' +
+                ", valore=" + valore +
+                ", titolo='" + titolo + '\'' +
+                ", tipo='" + tipo + '\'' +
+                ", nome_autore='" + nome_autore + '\'' +
+                ", peso=" + peso +
+                ", luogo_scoperta='" + luogo_scoperta + '\'' +
+                ", data_scoperta='" + data_scoperta + '\'' +
+                ", bibliografia='" + bibliografia + '\'' +
+                ", descrizione='" + descrizione + '\'' +
+                ", id_multimedia=" + id_multimedia +
+                ", pubblicato='" + pubblicato + '\'' +
+                '}';
+    }
 }

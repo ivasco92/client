@@ -1,8 +1,10 @@
 package com.app.smartmuseum.smartmuseum;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,22 +20,17 @@ import android.view.WindowManager;
 
 
 import com.google.zxing.Result;
-import com.google.zxing.common.StringUtils;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
 import java.net.HttpURLConnection;
-import java.net.InetAddress;
 import java.net.MalformedURLException;
-import java.net.Socket;
 import java.net.URL;
-import java.net.UnknownHostException;
+import java.sql.Array;
+import java.util.Arrays;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -44,14 +41,8 @@ public class HomeActivity extends AppCompatActivity implements ZXingScannerView.
     private ZXingScannerView mScannerView;
     ViewPager viewPager;
     private static int flag;
-    private static final String TAG="Home Activity";
-
-    //connessione server
-    HttpURLConnection httpurlconnection;
-    final StringBuilder urlBuilder = new StringBuilder("https://smartmuseum.000webhostapp.com/wp-content/plugins/extensionModel/service.php");
-    private static final String CONTENT_TYPE ="content_type";
-    private OutputStream out; //Stream di output per la comunicazione con il server
-    private InputStream in ; //Stream di input per la comunicazione con il server
+    private static final String TAG = "Home Activity";
+    private static final String URLSTRING = "https://smartmuseum.000webhostapp.com/wp-content/plugins/extensionModel/service.php?id=";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +54,7 @@ public class HomeActivity extends AppCompatActivity implements ZXingScannerView.
         StrictMode.setThreadPolicy(policy);
 
         //Fullscreen schermo
-         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_home);
@@ -78,18 +69,15 @@ public class HomeActivity extends AppCompatActivity implements ZXingScannerView.
         timer.scheduleAtFixedRate(new MyTimertask(), 2000, 4000);
 
 
-
-
         //set margine nameApp
-        CollapsingToolbarLayout tl= (CollapsingToolbarLayout)findViewById(R.id.toolbar_layout);
+        CollapsingToolbarLayout tl = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
         tl.setExpandedTitleMarginBottom(100);
-       // toolbar.setLogo(R.drawable.ic_launcher);
-
+        // toolbar.setLogo(R.drawable.ic_launcher);
 
 
         //libreria QRCode
         mScannerView = new ZXingScannerView(this);
-        flag=1; // flag per tornare dietro alle activity precedenti
+        flag = 1; // flag per tornare dietro alle activity precedenti
 
 
         //gestione del bottone per scansione QRCODE
@@ -98,7 +86,7 @@ public class HomeActivity extends AppCompatActivity implements ZXingScannerView.
             @Override
             public void onClick(View view) {
 
-               // mScannerView = new ZXingScannerView(getApplicationContext());
+                // mScannerView = new ZXingScannerView(getApplicationContext());
                 setContentView(mScannerView);
                 mScannerView.setResultHandler((ZXingScannerView.ResultHandler) view.getContext());
                 mScannerView.startCamera();
@@ -112,8 +100,7 @@ public class HomeActivity extends AppCompatActivity implements ZXingScannerView.
     }
 
 
-
-    public class MyTimertask extends TimerTask{
+    public class MyTimertask extends TimerTask {
 
         //Scorrimento slide nella HomeActivity
         @Override
@@ -121,11 +108,11 @@ public class HomeActivity extends AppCompatActivity implements ZXingScannerView.
             HomeActivity.this.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    if(viewPager.getCurrentItem()==0){
+                    if (viewPager.getCurrentItem() == 0) {
                         viewPager.setCurrentItem(1);
-                    }else if(viewPager.getCurrentItem()==1){
+                    } else if (viewPager.getCurrentItem() == 1) {
                         viewPager.setCurrentItem(2);
-                    }else{
+                    } else {
                         viewPager.setCurrentItem(0);
                     }
                 }
@@ -134,88 +121,41 @@ public class HomeActivity extends AppCompatActivity implements ZXingScannerView.
     }
 
 
-        @Override
-        protected void onPause() {
-            super.onPause();
-            mScannerView.stopCamera();
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mScannerView.stopCamera();
+    }
+
+
+    //risultato aperto mella ResultActivity
+    @Override
+    public void handleResult(Result result) {
+        try {
+            // Creo l'oggetto URL che rappresenta l'indirizzo della pagina da richiamare
+            URL url = new URL(URLSTRING + result.getText().toString());
+
+            // creo l'oggetto HttpURLConnection paragonabile all'apertura di una finestra del browser
+            HttpURLConnection client = (HttpURLConnection) url.openConnection();
+
+            // Recupero le informazioni inviate dal server
+            InputStream risposta = new BufferedInputStream(client.getInputStream());
+
+         /*   String datiLetti = null;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+                datiLetti = mostroDati(risposta);
+            }*/
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                Intent intent = new Intent(getApplication(), ResultActivity.class);
+                intent.putExtra("TEST", mostroDati(risposta));
+                startActivity(intent);
+            }
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
-
-        //risultato aperto mella ResultActivity
-        @Override
-        public void handleResult(Result result) {
-
-                InetAddress host;
-                try {
-                    final URL requesturl=new URL(urlBuilder.toString());
-                    httpurlconnection=(HttpURLConnection) requesturl.openConnection();
-                    httpurlconnection.setRequestMethod("GET");
-                    httpurlconnection.setDoInput(true);
-                    httpurlconnection.setDoOutput(true);
-
-
-                    /*host = InetAddress.getByName(requesturl.getHost());   //identificazione dell'IP del client
-                    Socket socket = new Socket(host, 8080);
-                    out = socket.getOutputStream();
-                    in = socket.getInputStream();
-                    BufferedReader inR = new BufferedReader(new InputStreamReader(in));
-                    PrintWriter outW = new PrintWriter(new BufferedWriter(new OutputStreamWriter(out)), true); //stream in output (invia i dati al server)
-
-                    outW.println(result.getText().toString());*/
-                     out=httpurlconnection.getOutputStream();
-                    in= httpurlconnection.getInputStream();
-
-                    //invio
-                    PrintWriter outW= new PrintWriter(new BufferedWriter(new OutputStreamWriter(out)), true); //stream in output (invia i dati al server)
-               //     outW.write(Integer.valueOf(result.getText().toString()));
-                    final String urlreperto="https://smartmuseum.000webhostapp.com/wp-content/plugins/extensionModel/service.php?id=";
-                    outW.println(urlreperto+result.getText().toString());
-                    Log.d(TAG, "inviato il qrcode--->" + urlreperto+result.getText().toString());
-
-                    //ricevo
-                    BufferedReader r = new BufferedReader(new InputStreamReader(in));
-                    String x = "";
-                    x = r.readLine();
-                    String total = "";
-
-                    while(x!= null){
-                        total += x;
-                        x = r.readLine();
-                    }
-
-                    Log.d(TAG, "Ecco la readline--->" + total);
-
-                    Intent intent = new Intent(getApplication(), ResultActivity.class);
-                    intent.putExtra("TEST", total);
-                    startActivity(intent);
-               /* Log.d(TAG,"istanzio l url");
-                final URL requesturl=new URL(urlBuilder.toString());
-                httpurlconnection=(HttpURLConnection) requesturl.openConnection();
-                httpurlconnection.setRequestMethod("GET");
-                httpurlconnection.setDoInput(true);
-                httpurlconnection.setDoOutput(true);
-
-                //mando al server
-                outputStream=httpurlconnection.getOutputStream();
-                outputStream.write(result.getText().getBytes("UTF-8"));
-
-                Log.d(TAG, "invio il qrcode");
-                httpurlconnection.addRequestProperty(CONTENT_TYPE, "application/json");
-                final int httpResponseCode= httpurlconnection.getResponseCode();
-                Log.d(TAG, "response--------->"+ httpResponseCode);
-                outputStream.close();*/
-
-                /*ricevo dal server
-                if(httpResponseCode>= httpurlconnection.HTTP_OK && httpResponseCode< httpurlconnection.HTTP_MULT_CHOICE){
-                    inputStream= httpurlconnection.getInputStream();
-                    Log.d(TAG, "ho appena ricevuto dal server non so cosa");*/
-                    //  final String asString=sun.misc.IOUtils
-
-                } catch (UnknownHostException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
                /* else{
                     inputStream= httpurlconnection.getErrorStream();
                 }
@@ -234,9 +174,10 @@ public class HomeActivity extends AppCompatActivity implements ZXingScannerView.
             AlertDialog alertDialog = builder.create();
             alertDialog.show();*/
 
-                //mScannerView.resumeCameraPreview(this);
+        //mScannerView.resumeCameraPreview(this);
 
-        }
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -272,5 +213,18 @@ public class HomeActivity extends AppCompatActivity implements ZXingScannerView.
             Intent intent = new Intent(this, HomeActivity.class);
             startActivity(intent);
         }
+    }
+
+    private static String mostroDati(InputStream in) {
+        StringBuilder sb = new StringBuilder();
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(in));) {
+            String nextLine = "";
+            while ((nextLine = reader.readLine()) != null) {
+                sb.append(nextLine);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return sb.toString();
     }
 }
