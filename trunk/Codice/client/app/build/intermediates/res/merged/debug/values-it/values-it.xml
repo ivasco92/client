@@ -20,22 +20,22 @@
     <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"Condividi con %s"</string>
     <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Comprimi"</string>
     <string name="action_settings">Impostazioni</string>
-    <string name="app_name">SmartMuseum</string>
-    <string name="desc_slide1">    SmartMuseum!! </string>
-    <string name="desc_slide2">Questa app permette di visitare un museo in modo interattivo</string>
-    <string name="desc_slide3">Hai la possobilità di decidere se leggere o ascoltare le informazioni sulle opere</string>
+    <string name="app_name">"    SmartMuseum"</string>
+    <string name="desc_slide1"/>
+    <string name="desc_slide2">Questa app permette di visitare un museo in modo semplice e interattivo</string>
+    <string name="desc_slide3">Hai la possibilità di decidere se leggere, ascoltare o vedere le informazioni sul reperto</string>
     <string name="large_text">
 
         "Smart Museum.\n\n"
 
         "Smart Museum è l'app che permette di trasformare una semplice visita ad un museo in un'esperienza nuova e più coinvolgente.\n\n"
-        "Grazie al QR-Code presente vicino all'opera che ti interessa, potrai leggere o ascoltare le informazioni su di essa"
+        "Grazie al QR-Code presente vicino al reperto che ti interessa, potrai leggere o ascoltare le informazioni su di esso"
         "direttamente sul tuo smartphone.\n"
         "Basta premere il bottone per la scansione, rivolgere la fotocamera verso il QR-Code e il gioco è fatto.\n\n"
-        "Una volta apparse le informazioni sull'opera, potrai:\n\n"
+        "Una volta apparse le informazioni sul reperto, potrai:\n\n"
         "- ascoltare la descrizione premendo il bottone col simbolo dell'altoparlante,\n\n"
-        "- scorrere la galleria con le foto dell'opera,\n\n"
-        "- guardare gli eventuali video che la riguardano premendo il bottone col simbolo della telecamera.\n\n\n"
+        "- scorrere la galleria con le foto del reperto,\n\n"
+        "- guardare gli eventuali video che lo riguardano premendo il bottone col simbolo della telecamera.\n\n\n"
         "Buon divertimento!\n\n\n"
 
         "Per maggiori informazioni, visita il sito:"
@@ -43,11 +43,12 @@
         "\n\n\n\n"
 
     </string>
-    <string name="next">Successivo</string>
+    <string name="next">Avanti</string>
     <string msgid="146198913615257606" name="search_menu_title">"Ricerca"</string>
     <string name="skip">Salta</string>
     <string name="start">Inizio</string>
     <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="text_guide">Inserire un codice a barre nel rettangolo del mirino per eseguirne la scansione.</string>
     <string name="title_slide1">Benvenuto in Smart Museum</string>
     <string name="title_slide2">Qr Code</string>
     <string name="title_slide3">Audio e Video</string>

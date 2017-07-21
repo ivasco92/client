@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SmartMuseum</string>
+    <string name="app_name">"    SmartMuseum"</string>
     <string name="large_text">
 
         "Smart Museum.\n\n"
@@ -21,17 +21,20 @@
 
     </string>
 
-
+    <!-- Intro Activity -->
     <string name="action_settings">Settings</string>
-
     <string name="next">Next</string>
     <string name="skip">Skip</string>
     <string name="start">Start</string>
     <string name="title_slide1">Welcome in Smart Museum</string>
     <string name="desc_slide1"></string>
     <string name="title_slide2">Qr Code</string>
-    <string name="desc_slide2">This app allows you to visit a museum in an interactive way</string>
+    <string name="desc_slide2">This app allows you to visit a museum in a simple and interactive way</string>
     <string name="title_slide3">Audio and Video</string>
     <string name="desc_slide3">You have the ability to decide whether to read or listen to information about the works</string>
+
+    <!-- Result Activity -->
+   <string name="text_guide">Place a barcode in the viewfinder rectangle to scan it.</string>
+
 
 </resources>

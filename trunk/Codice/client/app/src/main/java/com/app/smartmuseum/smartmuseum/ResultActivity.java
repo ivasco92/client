@@ -1,10 +1,10 @@
 package com.app.smartmuseum.smartmuseum;
 
-import android.content.Intent;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.EditText;
 import android.widget.TextView;
+
 
 public class ResultActivity extends AppCompatActivity {
 
@@ -15,6 +15,9 @@ public class ResultActivity extends AppCompatActivity {
 
         Bundle intent= getIntent().getExtras();
         String text= intent.getString("TEST");
+
+       // ZXingScannerView edit = (ZXingScannerView) findViewById(R.id.scanner_fragment);
+      //  edit.setResultHandler();
         TextView edit=(TextView) findViewById(R.id.textView);
         edit.setText(text);
     }
