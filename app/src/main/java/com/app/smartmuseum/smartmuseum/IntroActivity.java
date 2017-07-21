@@ -39,6 +39,7 @@ public class IntroActivity extends Activity {
         btnSkip = (Button) findViewById(R.id.btn_skip);
         btnNext = (Button) findViewById(R.id.btn_next);
 
+
         layouts = new int[]{
                 R.layout.slide1,
                 R.layout.slide2,
@@ -53,6 +54,7 @@ public class IntroActivity extends Activity {
 
     }
 
+    // gestione bottone Skip
     public  void btnSkipClick(View v)
     {
         launchHomeScreen();
@@ -73,6 +75,7 @@ public class IntroActivity extends Activity {
 
     ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
 
+        //gestione bottone Next e Start
         @Override
         public void onPageSelected(int position) {
             addBottomDots(position);

@@ -3,39 +3,111 @@
 
     <item
         is-multidex="false"
-        jar="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jar="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\exploded-aar\me.dm7.barcodescanner\zxing\1.8.4\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="68ef1daf85c69fca8fddf7bbb947fc51cc9f8ca3">
+        <dex dex="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\pre-dexed\debug\me.dm7.barcodescanner-zxing-1.8.4_010a720879ca5ac3fdda33e826655d3e471eb8a2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_dba569ca7aa9617f98f970f9930ae13851698fc0.jar" />
+        <dex dex="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_8d30642b341d64ec5d9fc11c117be025232ee0b6.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
+        jar="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-24.2.1_0da784fa9beaef220d99e5b950f8e5c9f6a0082b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.2.1_99ff5233600ba3fe0b0a7d6dfab088b71c91ebcc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\exploded-aar\me.dm7.barcodescanner\core\1.8.4\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="af8d42f1f020e936b8cd9f5cb6c75993194895a3">
+        <dex dex="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\pre-dexed\debug\me.dm7.barcodescanner-core-1.8.4_47052790b912aaba6481f77ee656cf306b659f1d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_e4ad652ef69d727f53708425412762baa8820d5f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-24.2.1_c0691ae2aed96269a520f56c03f1b7dc231a3b83.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-24.2.1_c6f517d6e04f89415a7c0baa98799aaee956df44.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-24.2.1_f7772ae3f0beedfe39ffcd5758c3226c0328cde9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\2.1.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a2af9c72ccaa4c5c049b500ca6ea664a4ce1f7d4">
+        <dex dex="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\pre-dexed\debug\de.hdodenhof-circleimageview-2.1.0_71a78e0d872de736892e15d01374e26cae8af6c4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.2.1_9f5d7561192c730786d84ebc0edd70db589f6df9.jar" />
+        <dex dex="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.2.1_1b61fe986c527645f259d1bc1510c93fe93ab207.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        jar="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.2.1_b2b6105fefd7ab8f89e22bd783cd8323e1a9d3b0.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\exploded-aar\com.android.support.constraint\constraint-layout\1.0.2\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
-        <dex dex="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\pre-dexed\debug\com.android.support.constraint-constraint-layout-1.0.2_265871ac4f78f46c243b73ec987867efa49ab912.jar" />
+        <dex dex="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.2.1_0f777ac1b2e50542732c2b717f94cab34b7aad46.jar" />
     </item>
     <item
         is-multidex="false"
@@ -44,16 +116,16 @@
         optimize="true"
         revision="25.0.2"
         sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
-        <dex dex="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\pre-dexed\debug\support-annotations-24.2.1_10cd953c940accdea77ebb67004f63b8f836c70e.jar" />
+        <dex dex="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\pre-dexed\debug\support-annotations-24.2.1_10cd953c940accdea77ebb67004f63b8f836c70e.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
+        jar="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\exploded-aar\com.android.support.constraint\constraint-layout\1.0.2\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-24.2.1_06c6a181d4308f7317babe7cbb28044790895112.jar" />
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\pre-dexed\debug\com.android.support.constraint-constraint-layout-1.0.2_0aee6834e4b551fbe7c8e4b4f535fa8b00474bd3.jar" />
     </item>
     <item
         is-multidex="false"
@@ -62,142 +134,25 @@
         optimize="true"
         revision="25.0.2"
         sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
-        <dex dex="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_dce0f5dc4ec87302d879250c45fe5f3f72f02917.jar" />
+        <dex dex="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_dce0f5dc4ec87302d879250c45fe5f3f72f02917.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_9b6f11d9b2cdd3e9d51a1d9a41f433eb448a18fc.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-24.2.1_00851fd414654bf7edc8d3a513641a7ed83a91a9.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_18076992f17a73024507ac69da636c3167661577.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-24.2.1_085de27420347d998bf02c75a405b96dcccb90d8.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\exploded-aar\com.android.support\design\24.2.1\jars\classes.jar"
+        jar="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\exploded-aar\com.android.support\design\24.2.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
-        <dex dex="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\pre-dexed\debug\com.android.support-design-24.2.1_8c37d78184a969595a62409f8b5f03c0cbf752b1.jar" />
+        <dex dex="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\pre-dexed\debug\com.android.support-design-24.2.1_073edb9f96284e474103cf69c048b9478f06ae47.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
+        jar="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-24.2.1_6975fdcd3754afba2da51f2255a27a7419a6522d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
-        <dex dex="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-24.2.1_f7c0e13cc1c20655d704b47b01a0b438e8fb8e07.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\exploded-aar\me.dm7.barcodescanner\core\1.8.4\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="af8d42f1f020e936b8cd9f5cb6c75993194895a3">
-        <dex dex="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\pre-dexed\debug\me.dm7.barcodescanner-core-1.8.4_86078f80c63c73a34e22fc5450122c0ab4ab7232.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_59625143c34705f5a8edfaa1d11b4e8301df1f93.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_85546969fa903059fe9a414f78557c91c2335ce1.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\exploded-aar\me.dm7.barcodescanner\zxing\1.8.4\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="68ef1daf85c69fca8fddf7bbb947fc51cc9f8ca3">
-        <dex dex="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\pre-dexed\debug\me.dm7.barcodescanner-zxing-1.8.4_e72d3f2b2fca18ef543bbe5f92285195ecc8a203.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-24.2.1_238ad6b17134e89ef31d95369efe7e21ee4fa9d7.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\2.1.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="a2af9c72ccaa4c5c049b500ca6ea664a4ce1f7d4">
-        <dex dex="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\pre-dexed\debug\de.hdodenhof-circleimageview-2.1.0_51ac7b9a64054cd35adb33ae99dd9a4910106979.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.2.1_18322f8b0038b22504997197bb917fa2d59a996a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.2.1_d33d8c7aab89781bce148b19f1af7e73e893e3d5.jar" />
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-24.2.1_a417cffd502f2ad94d7dadfde7c883b92e074fa3.jar" />
     </item>
     <item
         is-multidex="false"
@@ -206,7 +161,52 @@
         optimize="true"
         revision="25.0.2"
         sha1="2287494d4f5f9f3a9a2bb6980e3f32053721b315">
-        <dex dex="C:\Users\Paolo Pepe\Desktop\release\SmartMuseum\app\build\intermediates\pre-dexed\debug\core-3.2.1_e5dd804475afa35f90b230babcb82045cf11af06.jar" />
+        <dex dex="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\pre-dexed\debug\core-3.2.1_e5dd804475afa35f90b230babcb82045cf11af06.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-24.2.1_e472c23ceab0e7772ca34b243bb99dd01e07dd64.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_5c936baeb43cddc285a514c66cbdfb8b3fbb850e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.2.1_9710d69d0331fb1a20be59cff03ccb35ef898fb6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_69b154e238a5d5d560dc52738c96cb9c51a21b0c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="C:\Users\Paolo Pepe\Desktop\SmartMuseum_Repo\Codice\client\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_86d0677170e370117fcef02815d0df1bb3d93760.jar" />
     </item>
 
 </items>

@@ -16,7 +16,9 @@
     <dimen name="desc_padding">40dp</dimen>
 
     <!-- Logo icon -->
-    <dimen name="imgg_width">120dp</dimen>
-    <dimen name="imgg_height">120dp</dimen>
+    <dimen name="imgg_width">400dp</dimen>
+    <dimen name="imgg_height">279dp</dimen>
+
+
 
 </resources>
