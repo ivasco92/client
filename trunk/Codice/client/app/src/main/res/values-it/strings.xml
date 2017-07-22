@@ -33,11 +33,10 @@
     <string name="title_slide3">Audio e Video</string>
     <string name="desc_slide3">Hai la possibilità di decidere se leggere, ascoltare o vedere le informazioni sul reperto</string>
 
-    <!-- Result Activity -->
-    <string name="text_guide">Inserire un codice a barre nel rettangolo del mirino per eseguirne la scansione.</string>
-
     <!-- Work Activity -->
     <string name="title_activity_work">"WorkActivity"</string>
+    <string name="snackbar">Nessun file multimediale disponibile</string>
+    <string name="dialog">Errore! QrCode non valido</string>
 
     <!-- Setting  -->
     <string name="developer">Sviluppatori:"\n\n"

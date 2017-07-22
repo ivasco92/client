@@ -10,7 +10,7 @@
 
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/audio"
+        android:id="@+id/video"
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:layout_margin="@dimen/fab_margin"
@@ -21,7 +21,7 @@
         android:layout_gravity="center_vertical|center_horizontal" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/video"
+        android:id="@+id/audio"
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:layout_margin="@dimen/fab_margin"
@@ -71,7 +71,7 @@
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_work"/>
+    <include layout="@layout/content_work" />
 
 
 </android.support.design.widget.CoordinatorLayout>
