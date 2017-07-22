@@ -30,10 +30,7 @@ public class ResultActivity extends AppCompatActivity {
         Bundle intent= getIntent().getExtras();
         String text= intent.getString("TEST");
 
-       // ZXingScannerView edit = (ZXingScannerView) findViewById(R.id.scanner_fragment);
-      //  edit.setResultHandler();
-        TextView edit=(TextView) findViewById(R.id.textView);
-        edit.setText(text);
+
         try {
             JSONArray jsonArray= new JSONArray(text);
             Log.d(TAG,jsonArray.get(0).toString());//è un json array;

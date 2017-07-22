@@ -676,7 +676,7 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Info Smart Museum</string>
     <string name="app_name">"    SmartMuseum"</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
@@ -684,6 +684,12 @@
     <string name="desc_slide1"/>
     <string name="desc_slide2">This app allows you to visit a museum in a simple and interactive way</string>
     <string name="desc_slide3">You have the ability to decide whether to read or listen to information about the works</string>
+    <string name="developer">Developers:"\n\n"
+                             "Pepe Paolo \n"
+                             "Rini Roberta \n"
+                             "Sansone Giuseppe \n"
+                             "Scorrano Ivan \n\n"
+    </string>
     <string name="large_text">
 
         "Smart Museum.\n\n"
@@ -710,9 +716,11 @@
     <string name="start">Start</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="text_guide">Place a barcode in the viewfinder rectangle to scan it.</string>
+    <string name="title_activity_work">WorkActivity</string>
     <string name="title_slide1">Welcome in Smart Museum</string>
     <string name="title_slide2">Qr Code</string>
     <string name="title_slide3">Audio and Video</string>
+    <string name="version">"Version 0.3"</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>

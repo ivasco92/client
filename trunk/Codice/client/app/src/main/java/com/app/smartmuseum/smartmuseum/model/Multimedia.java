@@ -13,6 +13,8 @@ public class Multimedia {
         this.url = url;
     }
 
+    public Multimedia(){}
+
     public int getId() {
         return id;
     }

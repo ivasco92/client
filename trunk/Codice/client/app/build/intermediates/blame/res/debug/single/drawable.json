@@ -100,12 +100,12 @@
         "source": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum_Repo\\Codice\\client\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_edit_text_material.xml"
     },
     {
-        "merged": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum_Repo\\Codice\\client\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
-        "source": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum_Repo\\Codice\\client\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_item_background_holo_dark.xml"
-    },
-    {
         "merged": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum_Repo\\Codice\\client\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_slide1.png",
         "source": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum_Repo\\Codice\\client\\app\\src\\main\\res\\drawable\\ic_slide1.png"
+    },
+    {
+        "merged": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum_Repo\\Codice\\client\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum_Repo\\Codice\\client\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_item_background_holo_dark.xml"
     },
     {
         "merged": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum_Repo\\Codice\\client\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",

@@ -22,7 +22,7 @@
     </string>
 
     <!-- Intro Activity -->
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Info Smart Museum</string>
     <string name="next">Next</string>
     <string name="skip">Skip</string>
     <string name="start">Start</string>
@@ -34,7 +34,18 @@
     <string name="desc_slide3">You have the ability to decide whether to read or listen to information about the works</string>
 
     <!-- Result Activity -->
-   <string name="text_guide">Place a barcode in the viewfinder rectangle to scan it.</string>
+    <string name="text_guide">Place a barcode in the viewfinder rectangle to scan it.</string>
 
+    <!-- Work Activity -->
+    <string name="title_activity_work">WorkActivity</string>
+
+    <!-- Developers -->
+    <string name="developer">Developers:"\n\n"
+                             "Pepe Paolo \n"
+                             "Rini Roberta \n"
+                             "Sansone Giuseppe \n"
+                             "Scorrano Ivan \n\n"
+    </string>
+    <string name="version">"Version 0.3"</string>
 
 </resources>
