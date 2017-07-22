@@ -6,26 +6,17 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
-import com.app.smartmuseum.smartmuseum.remoteDatabase.JsonHelper;
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.reflect.TypeToken;
+
+import com.app.smartmuseum.smartmuseum.model.Reperto;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.lang.reflect.Type;
-import java.text.Collator;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
-import java.util.stream.Collectors;
 
 
 public class ResultActivity extends AppCompatActivity {
@@ -45,66 +36,29 @@ public class ResultActivity extends AppCompatActivity {
         edit.setText(text);
         try {
             JSONArray jsonArray= new JSONArray(text);
-            Log.d(TAG,jsonArray.get(0).toString());//è un json array
-            JSONArray jsonArray1= (JSONArray) jsonArray.get(0);
-            List listreperto= toList(jsonArray1);
-            Log.d(TAG, " lista--->"+listreperto);
-            Log.d(TAG,"elemento lista--->"+listreperto.get(0));
+            Log.d(TAG,jsonArray.get(0).toString());//è un json array;
+            JSONArray jsonArray0= (JSONArray) jsonArray.get(0);
+            Reperto reperto= new Reperto();
+            
+            reperto.setId(Integer.parseInt(jsonArray0.getJSONObject(0).get("id").toString()));
+            reperto.setDimensioni(jsonArray0.getJSONObject(0).get("dimesioni").toString());
+            reperto.setValore(Float.valueOf(jsonArray0.getJSONObject(0).get("valore").toString()));
+            reperto.setTitolo(jsonArray0.getJSONObject(0).get("titolo").toString());
+            reperto.setTipo(jsonArray0.getJSONObject(0).get("tipo").toString());
+            reperto.setNome_autore(jsonArray0.getJSONObject(0).get("nome_autore").toString());
+            reperto.setPeso(Integer.parseInt(jsonArray0.getJSONObject(0).get("peso").toString()));
+            reperto.setLuogo_scoperta(jsonArray0.getJSONObject(0).get("luogo_scoperta").toString());
+            reperto.setData_scoperta(jsonArray0.getJSONObject(0).get("data_scoperta").toString());
+            reperto.setData_acquisizione(jsonArray0.getJSONObject(0).get("data_acquisizione").toString());
+            reperto.setBibliografia(jsonArray0.getJSONObject(0).get("bibliografia").toString());
+            reperto.setDescrizione(jsonArray0.getJSONObject(0).get("descrizione").toString());
+            reperto.setPubblicato(jsonArray0.getJSONObject(0).get("pubblicato").toString());
+
+            Log.d(TAG, "reperto--->"+reperto.toString());
+
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
-    }
-
-
-
-
-
-
-
-
-    public static Map<String, Object> jsonToMap(JSONObject json) throws JSONException {
-        Map<String, Object> retMap = new HashMap<String, Object>();
-
-        if(json != JSONObject.NULL) {
-            retMap = toMap(json);
-        }
-        return retMap;
-    }
-
-    public static Map<String, Object> toMap(JSONObject object) throws JSONException {
-        Map<String, Object> map = new HashMap<String, Object>();
-
-        Iterator<String> keysItr = object.keys();
-        while(keysItr.hasNext()) {
-            String key = keysItr.next();
-            Object value = object.get(key);
-
-            if(value instanceof JSONArray) {
-                value = toList((JSONArray) value);
-            }
-
-            else if(value instanceof JSONObject) {
-                value = toMap((JSONObject) value);
-            }
-            map.put(key, value);
-        }
-        return map;
-    }
-
-    public static List<Object> toList(JSONArray array) throws JSONException {
-        List<Object> list = new ArrayList<Object>();
-        for(int i = 0; i < array.length(); i++) {
-            Object value = array.get(i);
-            if(value instanceof JSONArray) {
-                value = toList((JSONArray) value);
-            }
-
-            else if(value instanceof JSONObject) {
-                value = toMap((JSONObject) value);
-            }
-            list.add(value);
-        }
-        return list;
     }
 }
