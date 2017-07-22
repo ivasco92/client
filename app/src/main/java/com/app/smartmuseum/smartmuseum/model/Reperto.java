@@ -20,7 +20,9 @@ public class Reperto {
     private int id_multimedia;
     private String pubblicato;
 
-    public Reperto(int id, String pubblicato, int id_multimedia, String descrizione, String bibliografia, String data_scoperta, String luogo_scoperta, int peso, String data_acquisizione, String dimensioni, float valore, String titolo, String tipo, String nome_autore) {
+    public Reperto(int id, String pubblicato, int id_multimedia, String descrizione, String bibliografia,
+                   String data_scoperta, String luogo_scoperta, int peso, String data_acquisizione,
+                   String dimensioni, float valore, String titolo, String tipo, String nome_autore) {
         this.id = id;
         this.pubblicato = pubblicato;
         this.id_multimedia = id_multimedia;
@@ -36,6 +38,8 @@ public class Reperto {
         this.tipo = tipo;
         this.nome_autore = nome_autore;
     }
+
+    public Reperto(){}
 
     public int getId() {
         return id;
