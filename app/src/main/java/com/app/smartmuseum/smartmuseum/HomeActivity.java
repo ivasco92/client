@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.support.annotation.RequiresApi;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,6 +11,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,8 +29,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.sql.Array;
-import java.util.Arrays;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -41,6 +39,8 @@ public class HomeActivity extends AppCompatActivity implements ZXingScannerView.
     private ZXingScannerView mScannerView;
     ViewPager viewPager;
     private static int flag;
+
+    //ivan
     private static final String TAG = "Home Activity";
     private static final String URLSTRING = "https://smartmuseum.000webhostapp.com/wp-content/plugins/extensionModel/service.php?id=";
 
@@ -49,8 +49,8 @@ public class HomeActivity extends AppCompatActivity implements ZXingScannerView.
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
+        //ivan
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-
         StrictMode.setThreadPolicy(policy);
 
         //Fullscreen schermo
@@ -147,8 +147,11 @@ public class HomeActivity extends AppCompatActivity implements ZXingScannerView.
             }*/
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                Intent intent = new Intent(getApplication(), ResultActivity.class);
-                intent.putExtra("TEST", mostroDati(risposta));
+                //Intent intent = new Intent(getApplication(), ResultActivity.class);
+                //intent.putExtra("TEST", mostroDati(risposta));
+                //startActivity(intent);
+                Intent intent = new Intent(getApplication(),WorkActivity.class);
+                intent.putExtra("TEST", result.getText());
                 startActivity(intent);
             }
         } catch (MalformedURLException e) {
@@ -178,6 +181,8 @@ public class HomeActivity extends AppCompatActivity implements ZXingScannerView.
 
     }
 
+
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -201,14 +206,19 @@ public class HomeActivity extends AppCompatActivity implements ZXingScannerView.
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent = new Intent(getApplication(),InfoActivity.class);
+            startActivity(intent);
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
+
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+
         if (flag != 1) {
             Intent intent = new Intent(this, HomeActivity.class);
             startActivity(intent);

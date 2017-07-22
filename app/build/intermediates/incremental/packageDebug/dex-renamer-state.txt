@@ -1,4 +1,4 @@
-#Thu Jul 20 19:06:46 CEST 2017
+#Sat Jul 22 13:53:19 CEST 2017
 base.0=C\:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum_Repo\\Codice\\client\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
 file.0=C\:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum_Repo\\Codice\\client\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

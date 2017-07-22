@@ -12,6 +12,22 @@ public class TipoMultimedia {
         this.id = id;
         this.nome = nome;
     }
+    public TipoMultimedia(int id){
+        if(id==1) {
+            this.id = id;
+            this.nome = "audio";
+        }
+        else if(id==2) {
+            this.id = id;
+            this.nome = "video";
+        }
+        else if(id==3) {
+            this.id = id;
+            this.nome = "foto";
+        }
+    }
+
+    public TipoMultimedia(){}
 
     public int getId() {
         return id;

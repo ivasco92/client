@@ -8,6 +8,10 @@
         "source": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum_Repo\\Codice\\client\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_action_bar_title_item.xml"
     },
     {
+        "merged": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum_Repo\\Codice\\client\\app\\build\\intermediates\\res\\merged\\debug\\layout\\content_work.xml",
+        "source": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum_Repo\\Codice\\client\\app\\src\\main\\res\\layout\\content_work.xml"
+    },
+    {
         "merged": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum_Repo\\Codice\\client\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
         "source": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum_Repo\\Codice\\client\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_action_mode_close_item_material.xml"
     },
@@ -116,6 +120,10 @@
         "source": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum_Repo\\Codice\\client\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_list_menu_item_layout.xml"
     },
     {
+        "merged": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum_Repo\\Codice\\client\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_info.xml",
+        "source": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum_Repo\\Codice\\client\\app\\src\\main\\res\\layout\\activity_info.xml"
+    },
+    {
         "merged": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum_Repo\\Codice\\client\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
         "source": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum_Repo\\Codice\\client\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_list_menu_item_checkbox.xml"
     },
@@ -126,6 +134,10 @@
     {
         "merged": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum_Repo\\Codice\\client\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
         "source": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum_Repo\\Codice\\client\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\notification_media_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum_Repo\\Codice\\client\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_work.xml",
+        "source": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum_Repo\\Codice\\client\\app\\src\\main\\res\\layout\\activity_work.xml"
     },
     {
         "merged": "C:\\Users\\Paolo Pepe\\Desktop\\SmartMuseum_Repo\\Codice\\client\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar.xml",
