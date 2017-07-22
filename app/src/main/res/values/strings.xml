@@ -33,11 +33,10 @@
     <string name="title_slide3">Audio and Video</string>
     <string name="desc_slide3">You have the ability to decide whether to read or listen to information about the works</string>
 
-    <!-- Result Activity -->
-    <string name="text_guide">Place a barcode in the viewfinder rectangle to scan it.</string>
-
     <!-- Work Activity -->
     <string name="title_activity_work">WorkActivity</string>
+    <string name="snackbar">No media available!</string>
+    <string name="dialog">Error! QrCode not valid</string>
 
     <!-- Developers -->
     <string name="developer">Developers:"\n\n"

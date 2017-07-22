@@ -6,20 +6,22 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 
 import com.google.zxing.Result;
+
+import org.json.JSONArray;
+import org.json.JSONException;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -33,6 +35,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
+
+import static java.security.AccessController.getContext;
 
 public class HomeActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
 
@@ -93,12 +97,9 @@ public class HomeActivity extends AppCompatActivity implements ZXingScannerView.
                 flag = -1;
                 Log.d(TAG, "Faccio partire la fotocamera");
 
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
             }
         });
     }
-
 
     public class MyTimertask extends TimerTask {
 
@@ -120,13 +121,11 @@ public class HomeActivity extends AppCompatActivity implements ZXingScannerView.
         }
     }
 
-
     @Override
     protected void onPause() {
         super.onPause();
         mScannerView.stopCamera();
     }
-
 
     //risultato aperto mella ResultActivity
     @Override
@@ -141,47 +140,33 @@ public class HomeActivity extends AppCompatActivity implements ZXingScannerView.
             // Recupero le informazioni inviate dal server
             InputStream risposta = new BufferedInputStream(client.getInputStream());
 
-         /*   String datiLetti = null;
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
-                datiLetti = mostroDati(risposta);
-            }*/
-
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                //Intent intent = new Intent(getApplication(), ResultActivity.class);
-                //intent.putExtra("TEST", mostroDati(risposta));
-                //startActivity(intent);
-                Intent intent = new Intent(getApplication(),WorkActivity.class);
-                intent.putExtra("TEST", result.getText());
-                startActivity(intent);
+                String dati= mostroDati(risposta);
+                JSONArray jsonArray= new JSONArray(dati);
+                JSONArray jsonArrayreperto = (JSONArray) jsonArray.get(0);
+                if(jsonArrayreperto.length()!=0) {
+
+                    Intent intent = new Intent(getApplication(), WorkActivity.class);
+                    intent.putExtra("TEST", dati);
+                    startActivity(intent);
+                }
+                else{
+                    Log.d(TAG, "sono in else");
+                    Toast toast = Toast.makeText(getBaseContext(), R.string.dialog, Toast.LENGTH_SHORT);
+                    toast.show();
+                    mScannerView.setResultHandler((ZXingScannerView.ResultHandler) this);
+                    mScannerView.startCamera();
+                }
             }
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
-               /* else{
-                    inputStream= httpurlconnection.getErrorStream();
-                }
-
-                final String httpResponseMessage= httpurlconnection.getResponseMessage();
-                Log.d(TAG, "risposta dal server--->"+httpResponseMessage.toString());
-                Log.d(TAG, "risultato dal server--->"+ inputStream.toString());
-
-
-            }*/
-            /*
-            Log.v("handleResult", result.getText());
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("Scan result");
-            builder.setMessage(result.getText());
-            AlertDialog alertDialog = builder.create();
-            alertDialog.show();*/
-
         //mScannerView.resumeCameraPreview(this);
-
     }
-
-
 
     @Override
     protected void onResume() {
@@ -212,8 +197,6 @@ public class HomeActivity extends AppCompatActivity implements ZXingScannerView.
         }
         return super.onOptionsItemSelected(item);
     }
-
-
 
     @Override
     public void onBackPressed() {
