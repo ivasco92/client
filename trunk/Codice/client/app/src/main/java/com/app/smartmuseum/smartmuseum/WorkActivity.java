@@ -3,8 +3,11 @@ package com.app.smartmuseum.smartmuseum;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,12 +18,10 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.VideoView;
 
-
-import com.app.smartmuseum.smartmuseum.model.Multimedia;
 import com.app.smartmuseum.smartmuseum.model.Reperto;
-import com.app.smartmuseum.smartmuseum.model.TipoMultimedia;
-
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,36 +31,58 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.HashMap;
+import java.util.Locale;
 
 import static com.app.smartmuseum.smartmuseum.R.id.toolbar1;
 
-public class WorkActivity extends AppCompatActivity {
+public class WorkActivity extends AppCompatActivity implements TextToSpeech.OnInitListener {
     private static final String TAG = "WorkActivity";
+    private MediaPlayer player = new MediaPlayer();
+    private int MY_DATA_CHECK_CODE = 0;
+    private TextToSpeech myTTS;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //intent per la sintesi vocale
+        Intent checkTTSIntent = new Intent();
+        checkTTSIntent.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
+        startActivityForResult(checkTTSIntent, MY_DATA_CHECK_CODE);
+
 
         //Fullscreen schermo
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_work);
+
         Toolbar toolbar = (Toolbar) findViewById(toolbar1);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        //back arrow
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
         //conversione Json per istanziare l'oggetto reperto
         Bundle intent = getIntent().getExtras();
-        String text = intent.getString("TEST");
+        final String text = intent.getString("TEST");
 
         try {
             JSONArray jsonArray = new JSONArray(text);
             JSONArray jsonArrayreperto = (JSONArray) jsonArray.get(0);
             JSONArray jsonArraymultimedia = (JSONArray) jsonArray.get(1);
+            Log.d(TAG, "array multimedia--->" + jsonArraymultimedia.toString());
 
-            Reperto reperto = new Reperto();
-            final Multimedia multimedia = new Multimedia();
-            final TipoMultimedia tipoMultimedia = new TipoMultimedia(Integer.parseInt(jsonArraymultimedia.getJSONObject(0).get("id_tipo").toString()));
+            final Reperto reperto = new Reperto();
 
             reperto.setId(Integer.parseInt(jsonArrayreperto.getJSONObject(0).get("id").toString()));
             reperto.setDimensioni(jsonArrayreperto.getJSONObject(0).get("dimesioni").toString());
@@ -75,43 +98,57 @@ public class WorkActivity extends AppCompatActivity {
             reperto.setDescrizione(jsonArrayreperto.getJSONObject(0).get("descrizione").toString());
             reperto.setPubblicato(jsonArrayreperto.getJSONObject(0).get("pubblicato").toString());
 
-            multimedia.setId(Integer.parseInt(jsonArraymultimedia.getJSONObject(0).get("id").toString()));
-            multimedia.setUrl(jsonArraymultimedia.getJSONObject(0).get("url").toString());
+            Log.d(TAG, "arraymultimedia---->" + jsonArraymultimedia.toString());
+            final HashMap<String, String> mapmedia = new HashMap<>();
+            final HashMap<String, String> maptipomedia = new HashMap<>();
+
+            for (int i = 0; i < jsonArraymultimedia.length(); i++) {
+                // mapmedia.put(jsonArraymultimedia.getJSONObject(i).get("id").toString(),maptipomedia);
+                // maptipomedia.put(jsonArraymultimedia.getJSONObject(i).get("id_tipo").toString(),jsonArraymultimedia.getJSONObject(i).get("url").toString());
+                String id_tipo = jsonArraymultimedia.getJSONObject(i).get("id_tipo").toString();
+                String url = jsonArraymultimedia.getJSONObject(i).get("url").toString();
+                mapmedia.put(id_tipo, url);
+            }
+
+            Log.d(TAG, "maptipomedia--->" + maptipomedia.toString());
+            Log.d(TAG, "map media----->" + mapmedia.toString());
 
             // setto il titolo dell'opera
-            setTitle(reperto.getTitolo());
+            setTitle("   " + reperto.getTitolo());
+
+            //setto la descrizione dell'opera
+            TextView descriptiontext = (TextView) findViewById(R.id.description);
+            descriptiontext.setText(reperto.getDescrizione());
 
             //carico e setto l'immagine del reperto
             ImageView imagereperto = (ImageView) findViewById(R.id.sfo_reperto);
             BitmapFactory.Options bmOptions;
             bmOptions = new BitmapFactory.Options();
             bmOptions.inSampleSize = 1;
-            Bitmap bm = LoadImage(multimedia.getUrl(), bmOptions);
+            Bitmap bm = LoadImage(mapmedia.get("3"), bmOptions);
             imagereperto.setImageBitmap(bm);
 
             //gestione bottoni audio e video
             FloatingActionButton fabaudio = (FloatingActionButton) findViewById(R.id.audio);
+            FloatingActionButton fabvideo = (FloatingActionButton) findViewById(R.id.video);
+            final boolean isidtype2=mapmedia.containsKey("2");
+            final String url2= mapmedia.get("2");
             fabaudio.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (tipoMultimedia.getNome().equals("audio")) {
-                        Uri uri = Uri.parse(multimedia.getUrl()); // missing 'http://' will cause crashed
-                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                        startActivity(intent);
-                    } else {
-                        Snackbar.make(view, R.string.snackbar, Snackbar.LENGTH_LONG)
-                                .setAction("Action", null).show();
+                    if(myTTS.isSpeaking()){
+                        myTTS.stop();
+                    }else{
+                    myTTS.speak(reperto.getDescrizione(),TextToSpeech.QUEUE_FLUSH,null);
                     }
                 }
             });
 
-            FloatingActionButton fabvideo = (FloatingActionButton) findViewById(R.id.video);
             fabvideo.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (tipoMultimedia.getNome().equals("video")) {
-                        Uri uri = Uri.parse(multimedia.getUrl()); // missing 'http://' will cause crashed
-                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                    if (isidtype2) {
+                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url2));
                         startActivity(intent);
                     } else {
                         Snackbar.make(view, R.string.snackbar, Snackbar.LENGTH_LONG)
@@ -119,15 +156,12 @@ public class WorkActivity extends AppCompatActivity {
                     }
                 }
             });
-
-            TextView descriptiontext = (TextView) findViewById(R.id.description);
-            descriptiontext.setText(reperto.getDescrizione());
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
         CollapsingToolbarLayout tl = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout1);
-        //tl.setExpandedTitleMarginBottom(700);
+        tl.setExpandedTitleMarginTop(25);
         tl.setExpandedTitleGravity(50);
     }
 
@@ -159,5 +193,28 @@ public class WorkActivity extends AppCompatActivity {
         } catch (Exception ex) {
         }
         return inputStream;
+    }
+
+    @Override
+    public void onInit(int i) {
+
+            if(myTTS.isLanguageAvailable(Locale.US)==TextToSpeech.LANG_AVAILABLE)
+                myTTS.setLanguage(Locale.US);
+        else if (i == TextToSpeech.ERROR) {
+            Toast.makeText(this, "Sorry! Text To Speech failed...", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == MY_DATA_CHECK_CODE) {
+            if (resultCode == TextToSpeech.Engine.CHECK_VOICE_DATA_PASS) {
+                myTTS = new TextToSpeech(this, this);
+            }
+            else {
+                Intent installTTSIntent = new Intent();
+                installTTSIntent.setAction(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA);
+                startActivity(installTTSIntent);
+            }
+        }
     }
 }
