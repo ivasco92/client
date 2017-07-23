@@ -3,6 +3,7 @@ package com.app.smartmuseum.smartmuseum;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.StrictMode;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -43,6 +44,8 @@ public class HomeActivity extends AppCompatActivity implements ZXingScannerView.
     private ZXingScannerView mScannerView;
     ViewPager viewPager;
     private static int flag;
+
+    private boolean isUserClickedBackButton = false;
 
     //ivan
     private static final String TAG = "Home Activity";
@@ -200,12 +203,39 @@ public class HomeActivity extends AppCompatActivity implements ZXingScannerView.
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+       /*
+        // doppio tab back
+        if(!isUserClickedBackButton){
+            Toast.makeText(this, "Press Back again to exit", Toast.LENGTH_LONG).show();
+            isUserClickedBackButton = true;
+        }else{
+            super.onBackPressed();
+            if (flag != 1) {
+                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                startActivity(intent);
+            }
 
+        }
+        new CountDownTimer(2000, 1000){
+
+            @Override
+            public void onTick(long millisUntilFinished) {
+            }
+
+            @Override
+            public void onFinish() {
+                isUserClickedBackButton = false;
+            }
+        }.start();
+        */
+
+        //riortno alla homeActivity dalla scansione qrcode
+        super.onBackPressed();
         if (flag != 1) {
-            Intent intent = new Intent(this, HomeActivity.class);
+            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
             startActivity(intent);
         }
+
     }
 
     private static String mostroDati(InputStream in) {
