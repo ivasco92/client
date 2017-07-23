@@ -8,10 +8,20 @@ public class TipoMultimedia {
     private int id;
     private String nome;
 
+    /**
+     * costruttore parametrizzato
+     * @param id
+     * @param nome
+     */
     public TipoMultimedia(int id, String nome) {
         this.id = id;
         this.nome = nome;
     }
+
+    /**
+     * costruttore tramite id
+     * @param id
+     */
     public TipoMultimedia(int id){
         if(id==1) {
             this.id = id;
@@ -27,20 +37,39 @@ public class TipoMultimedia {
         }
     }
 
+    /**
+     * costruttore
+     */
     public TipoMultimedia(){}
 
+    /**
+     * ritorna l'id
+     * @return
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * setta l'id
+     * @param id
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     * ritorna il nome
+     * @return
+     */
     public String getNome() {
         return nome;
     }
 
+    /**
+     * setta il nome
+     * @param nome
+     */
     public void setNome(String nome) {
         this.nome = nome;
     }
