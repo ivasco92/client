@@ -37,6 +37,14 @@
     <string name="title_activity_work">WorkActivity</string>
     <string name="snackbar">No media available!</string>
     <string name="dialog">Error! QrCode not valid</string>
+    <string name="autore">Author: </string>
+    <string name="datascoperta">Discovery date: </string>
+    <string name="luogoscoperta">Discovery place: </string>
+    <string name="dimension">Dimension: </string>
+    <string name="tipo">Type: </string>
+    <string name="peso">Weight: </string>
+    <string name="descrizione">Description: </string>
+    <string name="bibliografia">Bibliography</string>
 
     <!-- Developers -->
     <string name="developer">Developers:"\n\n"

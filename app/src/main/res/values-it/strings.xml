@@ -37,6 +37,14 @@
     <string name="title_activity_work">"WorkActivity"</string>
     <string name="snackbar">Nessun file multimediale disponibile</string>
     <string name="dialog">Errore! QrCode non valido</string>
+    <string name="autore">Autore: </string>
+    <string name="datscoperta">Data scoperta: </string>
+    <string name="luogoscoperta">Luogo scoperta: </string>
+    <string name="dimensione">Dimensione: </string>
+    <string name="tipo">Tipo: </string>
+    <string name="peso">Peso: </string>
+    <string name="descrizione">Descrizione: </string>
+    <string name="bibliografia">Bibliografia: </string>
 
     <!-- Setting  -->
     <string name="developer">Sviluppatori:"\n\n"

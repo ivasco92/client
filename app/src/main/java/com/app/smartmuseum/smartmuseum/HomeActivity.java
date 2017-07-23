@@ -3,7 +3,6 @@ package com.app.smartmuseum.smartmuseum;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.os.StrictMode;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -37,17 +36,12 @@ import java.util.TimerTask;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
-import static java.security.AccessController.getContext;
-
 public class HomeActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
 
     private ZXingScannerView mScannerView;
     ViewPager viewPager;
     private static int flag;
 
-    private boolean isUserClickedBackButton = false;
-
-    //ivan
     private static final String TAG = "Home Activity";
     private static final String URLSTRING = "https://smartmuseum.000webhostapp.com/wp-content/plugins/extensionModel/service.php?id=";
 
@@ -56,7 +50,7 @@ public class HomeActivity extends AppCompatActivity implements ZXingScannerView.
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-        //ivan
+
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
@@ -75,12 +69,9 @@ public class HomeActivity extends AppCompatActivity implements ZXingScannerView.
         Timer timer = new Timer();
         timer.scheduleAtFixedRate(new MyTimertask(), 2000, 4000);
 
-
         //set margine nameApp
         CollapsingToolbarLayout tl = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
         tl.setExpandedTitleMarginBottom(100);
-        // toolbar.setLogo(R.drawable.ic_launcher);
-
 
         //libreria QRCode
         mScannerView = new ZXingScannerView(this);
@@ -93,7 +84,6 @@ public class HomeActivity extends AppCompatActivity implements ZXingScannerView.
             @Override
             public void onClick(View view) {
 
-                // mScannerView = new ZXingScannerView(getApplicationContext());
                 setContentView(mScannerView);
                 mScannerView.setResultHandler((ZXingScannerView.ResultHandler) view.getContext());
                 mScannerView.startCamera();
@@ -104,10 +94,15 @@ public class HomeActivity extends AppCompatActivity implements ZXingScannerView.
         });
     }
 
+    /**
+     * Gestisce lo scorrimento dell slide in Home Activity
+     */
     public class MyTimertask extends TimerTask {
 
-        //Scorrimento slide nella HomeActivity
         @Override
+        /**
+         * Scorrimento slide nella HomeActivity
+         */
         public void run() {
             HomeActivity.this.runOnUiThread(new Runnable() {
                 @Override
@@ -130,8 +125,10 @@ public class HomeActivity extends AppCompatActivity implements ZXingScannerView.
         mScannerView.stopCamera();
     }
 
-    //risultato aperto mella ResultActivity
     @Override
+    /**
+     * Gestisce il risultato della scansione del QRCode
+     */
     public void handleResult(Result result) {
         try {
             // Creo l'oggetto URL che rappresenta l'indirizzo della pagina da richiamare
@@ -168,7 +165,6 @@ public class HomeActivity extends AppCompatActivity implements ZXingScannerView.
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        //mScannerView.resumeCameraPreview(this);
     }
 
     @Override
@@ -180,19 +176,14 @@ public class HomeActivity extends AppCompatActivity implements ZXingScannerView.
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_home, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             Intent intent = new Intent(getApplication(),InfoActivity.class);
             startActivity(intent);
@@ -203,32 +194,6 @@ public class HomeActivity extends AppCompatActivity implements ZXingScannerView.
 
     @Override
     public void onBackPressed() {
-       /*
-        // doppio tab back
-        if(!isUserClickedBackButton){
-            Toast.makeText(this, "Press Back again to exit", Toast.LENGTH_LONG).show();
-            isUserClickedBackButton = true;
-        }else{
-            super.onBackPressed();
-            if (flag != 1) {
-                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-                startActivity(intent);
-            }
-
-        }
-        new CountDownTimer(2000, 1000){
-
-            @Override
-            public void onTick(long millisUntilFinished) {
-            }
-
-            @Override
-            public void onFinish() {
-                isUserClickedBackButton = false;
-            }
-        }.start();
-        */
-
         //riortno alla homeActivity dalla scansione qrcode
         super.onBackPressed();
         if (flag != 1) {
@@ -238,6 +203,11 @@ public class HomeActivity extends AppCompatActivity implements ZXingScannerView.
 
     }
 
+    /**
+     * Formatta i dati dall' input stream
+     * @param in
+     * @return
+     */
     private static String mostroDati(InputStream in) {
         StringBuilder sb = new StringBuilder();
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(in));) {

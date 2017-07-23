@@ -75,8 +75,11 @@ public class IntroActivity extends Activity {
 
     ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
 
-        //gestione bottone Next e Start
+
         @Override
+        /**
+         * gestione bottone Next e Start
+         */
         public void onPageSelected(int position) {
             addBottomDots(position);
 
@@ -125,6 +128,9 @@ public class IntroActivity extends Activity {
         return viewPager.getCurrentItem() + i;
     }
 
+    /**
+     * lancia la Home Activity
+     */
     private void launchHomeScreen() {
         startActivity(new Intent(this, HomeActivity.class));
         finish();

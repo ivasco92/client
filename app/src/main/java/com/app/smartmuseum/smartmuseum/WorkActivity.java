@@ -3,7 +3,6 @@ package com.app.smartmuseum.smartmuseum;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -19,7 +18,6 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.VideoView;
 
 import com.app.smartmuseum.smartmuseum.model.Reperto;
 
@@ -38,7 +36,6 @@ import static com.app.smartmuseum.smartmuseum.R.id.toolbar1;
 
 public class WorkActivity extends AppCompatActivity implements TextToSpeech.OnInitListener {
     private static final String TAG = "WorkActivity";
-    private MediaPlayer player = new MediaPlayer();
     private int MY_DATA_CHECK_CODE = 0;
     private TextToSpeech myTTS;
 
@@ -61,9 +58,6 @@ public class WorkActivity extends AppCompatActivity implements TextToSpeech.OnIn
         Toolbar toolbar = (Toolbar) findViewById(toolbar1);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
-        //back arrow
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,7 +74,6 @@ public class WorkActivity extends AppCompatActivity implements TextToSpeech.OnIn
             JSONArray jsonArray = new JSONArray(text);
             JSONArray jsonArrayreperto = (JSONArray) jsonArray.get(0);
             JSONArray jsonArraymultimedia = (JSONArray) jsonArray.get(1);
-            Log.d(TAG, "array multimedia--->" + jsonArraymultimedia.toString());
 
             final Reperto reperto = new Reperto();
 
@@ -90,7 +83,7 @@ public class WorkActivity extends AppCompatActivity implements TextToSpeech.OnIn
             reperto.setTitolo(jsonArrayreperto.getJSONObject(0).get("titolo").toString());
             reperto.setTipo(jsonArrayreperto.getJSONObject(0).get("tipo").toString());
             reperto.setNome_autore(jsonArrayreperto.getJSONObject(0).get("nome_autore").toString());
-            reperto.setPeso(Integer.parseInt(jsonArrayreperto.getJSONObject(0).get("peso").toString()));
+            reperto.setPeso(Double.parseDouble(jsonArrayreperto.getJSONObject(0).get("peso").toString()));
             reperto.setLuogo_scoperta(jsonArrayreperto.getJSONObject(0).get("luogo_scoperta").toString());
             reperto.setData_scoperta(jsonArrayreperto.getJSONObject(0).get("data_scoperta").toString());
             reperto.setData_acquisizione(jsonArrayreperto.getJSONObject(0).get("data_acquisizione").toString());
@@ -98,27 +91,27 @@ public class WorkActivity extends AppCompatActivity implements TextToSpeech.OnIn
             reperto.setDescrizione(jsonArrayreperto.getJSONObject(0).get("descrizione").toString());
             reperto.setPubblicato(jsonArrayreperto.getJSONObject(0).get("pubblicato").toString());
 
-            Log.d(TAG, "arraymultimedia---->" + jsonArraymultimedia.toString());
             final HashMap<String, String> mapmedia = new HashMap<>();
-            final HashMap<String, String> maptipomedia = new HashMap<>();
 
             for (int i = 0; i < jsonArraymultimedia.length(); i++) {
-                // mapmedia.put(jsonArraymultimedia.getJSONObject(i).get("id").toString(),maptipomedia);
-                // maptipomedia.put(jsonArraymultimedia.getJSONObject(i).get("id_tipo").toString(),jsonArraymultimedia.getJSONObject(i).get("url").toString());
                 String id_tipo = jsonArraymultimedia.getJSONObject(i).get("id_tipo").toString();
                 String url = jsonArraymultimedia.getJSONObject(i).get("url").toString();
                 mapmedia.put(id_tipo, url);
             }
 
-            Log.d(TAG, "maptipomedia--->" + maptipomedia.toString());
-            Log.d(TAG, "map media----->" + mapmedia.toString());
-
             // setto il titolo dell'opera
-            setTitle("   " + reperto.getTitolo());
+            setTitle(reperto.getTitolo());
 
             //setto la descrizione dell'opera
             TextView descriptiontext = (TextView) findViewById(R.id.description);
-            descriptiontext.setText(reperto.getDescrizione());
+            descriptiontext.setText("Autore: "+reperto.getNome_autore()+"\n\n"+
+                                    "Data Scoperta: "+reperto.getData_scoperta()+"\n\n"+
+                                    "Luogo Scoperta: "+reperto.getLuogo_scoperta()+"\n\n"+
+                                    "Dimensioni: "+reperto.getDimensioni()+"\n\n"+
+                                    "Tipo: "+reperto.getTipo()+"\n\n"+
+                                    "Peso: "+reperto.getPeso()+"\n\n"+
+                                    "Descrizione: "+"\n"+reperto.getDescrizione()+"\n\n"+
+                                    "Bibliografia: "+reperto.getBibliografia()+"\n\n");
 
             //carico e setto l'immagine del reperto
             ImageView imagereperto = (ImageView) findViewById(R.id.sfo_reperto);
@@ -161,10 +154,15 @@ public class WorkActivity extends AppCompatActivity implements TextToSpeech.OnIn
         }
 
         CollapsingToolbarLayout tl = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout1);
-        tl.setExpandedTitleMarginTop(25);
         tl.setExpandedTitleGravity(50);
     }
 
+    /**
+     * carica l'immagine in bitmap
+     * @param URL
+     * @param options
+     * @return
+     */
     private Bitmap LoadImage(String URL, BitmapFactory.Options options) {
         Bitmap bitmap = null;
         InputStream in = null;
@@ -216,5 +214,17 @@ public class WorkActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 startActivity(installTTSIntent);
             }
         }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        myTTS.stop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        myTTS.stop();
     }
 }
